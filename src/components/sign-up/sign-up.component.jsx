@@ -28,7 +28,10 @@ class SignUp extends Component{
     }
 
     try {
-      const { user } = await auth.createUserWithEmailAndPassword(email, password);
+      const { user } = await auth.createUserWithEmailAndPassword(
+        email,
+        password
+      );
 
       await createUserProfileDocument(user, {displayName});
 
@@ -44,7 +47,7 @@ class SignUp extends Component{
   };
 
   handleChange = event => {
-    event.preventDefault();
+
     const { name, value } = event.target;
 
     this.setState({[name]: value});
